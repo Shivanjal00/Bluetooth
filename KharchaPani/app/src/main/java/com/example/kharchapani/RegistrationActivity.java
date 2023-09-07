@@ -11,39 +11,35 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     private EditText mEmail;
     private  EditText mPass;
-    private Button btnLogin;
-    private TextView mForgetPassword;
-    private TextView mSignupHere;
-
+    private Button btnReg;
+    private TextView mSignin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        loginDetails();
+        setContentView(R.layout.activity_registration);
+        registration();
     }
 
-    private void loginDetails(){
+    private void registration(){
 
-        mEmail = findViewById(R.id.email_login);
-        mPass = findViewById(R.id.password_login);;
-        btnLogin = findViewById(R.id.btn_login);
-        mForgetPassword = findViewById(R.id.forget_password);
-        mSignupHere = findViewById(R.id.signup_reg);
+        mEmail = findViewById(R.id.email_reg);
+        mPass = findViewById(R.id.password_reg);;
+        btnReg = findViewById(R.id.btn_reg);
+        mSignin = findViewById(R.id.signin_here);
 
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String pass = mPass.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email) || TextUtils.isEmpty(pass)){
-                    Toast.makeText(MainActivity.this, "Please enter credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrationActivity.this, "Please enter credentials", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is Requried !");
                     return;
@@ -54,23 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        mSignupHere.setOnClickListener(new View.OnClickListener() {
+        mSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(getApplicationContext(), RegistrationActivity.class));
-
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
-
-        mForgetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ResetActivity.class));
-            }
-        });
-
     }
 
 }

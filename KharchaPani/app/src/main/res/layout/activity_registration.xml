@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/background_color"
-    tools:context=".MainActivity">
+    tools:context=".RegistrationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Registration"
                 android:gravity="center"
                 android:textAppearance="?android:textAppearanceLarge"/>
 
@@ -31,43 +31,37 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Email"
-                android:id="@+id/email_login"/>
+                android:id="@+id/email_reg"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Password"
-                android:id="@+id/password_login"/>
+                android:id="@+id/password_reg"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Log in"
+                android:text="Registration"
                 android:backgroundTint="@color/black"
                 android:textColor="@color/white"
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_reg"
                 android:textAppearance="?android:textAppearanceMedium"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Forget Password"
+                android:text="Already have an account ? Login"
                 android:textColor="@color/black"
-                android:id="@+id/forget_password"
+                android:id="@+id/signin_here"
                 android:layout_margin="5dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:text="Don't have any account ? Sign Up"
-                android:id="@+id/signup_reg"
-                android:layout_margin="5dp"/>
+
         </LinearLayout>
 
     </ScrollView>
+
 </LinearLayout>
