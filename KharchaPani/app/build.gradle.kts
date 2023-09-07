@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.kharchapani"
-        minSdk = 17
+        minSdk = 16
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
