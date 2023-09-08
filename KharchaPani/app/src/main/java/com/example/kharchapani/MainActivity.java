@@ -1,8 +1,11 @@
 package com.example.kharchapani;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,6 +14,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText mEmail;
@@ -18,12 +26,22 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView mForgetPassword;
     private TextView mSignupHere;
+    FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.sky));
+        }
+        mAuth = FirebaseAuth.getInstance();
+
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        }
+
         loginDetails();
     }
 
@@ -51,7 +69,19 @@ public class MainActivity extends AppCompatActivity {
                     mPass.setError("Password is requried");
                     return;
                 }
+                mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            Toast.makeText(MainActivity.this, "Login Successful !", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(MainActivity.this, "Login Failed !", Toast.LENGTH_SHORT).show();
+                        }
 
+
+                    }
+                });
             }
         });
 

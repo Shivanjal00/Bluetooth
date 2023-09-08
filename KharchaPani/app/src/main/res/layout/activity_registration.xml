@@ -23,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Registration"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:textAppearance="?android:textAppearanceLarge"/>
 
@@ -31,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:id="@+id/email_reg"/>
 
             <EditText
@@ -38,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:hint="Password"
+                android:inputType="textPassword"
                 android:id="@+id/password_reg"/>
 
             <Button
@@ -55,8 +58,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Already have an account ? Login"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:id="@+id/signin_here"
+                android:paddingTop="10dp"
                 android:layout_margin="5dp"/>
 
 
