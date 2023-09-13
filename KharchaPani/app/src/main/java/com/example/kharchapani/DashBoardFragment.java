@@ -181,7 +181,7 @@ public class DashBoardFragment extends Fragment {
 
             }
         });
-        fab_expense_txt.setOnClickListener(new View.OnClickListener() {
+        fab_expense_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 expenseDataInsert();
