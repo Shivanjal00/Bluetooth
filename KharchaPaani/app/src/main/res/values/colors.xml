@@ -4,4 +4,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="sky">#03A9F4</color>
     <color name="indicator">#2196F3</color>
+    <color name="textcolor">#353535</color>
+    <color name="greenColor">#4CAF50</color>
+    <color name="redColor">#F44336</color>
+    <color name="bank">#A8004175</color>
+    <color name="Cash">#A8007502</color>
+    <color name="Card">#A87533</color>
+    <color name="Default">#A8303030</color>
 </resources>

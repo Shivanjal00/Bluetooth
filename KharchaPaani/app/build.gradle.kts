@@ -2,15 +2,14 @@ import com.android.build.api.dsl.BuildFeatures
 
 plugins {
     id("com.android.application")
+    id("realm-android")
 }
-
 android {
     namespace = "com.example.kharchapaani"
     compileSdk = 33
     buildFeatures{
         viewBinding = true
     }
-
     defaultConfig {
         applicationId = "com.example.kharchapaani"
         minSdk = 24
