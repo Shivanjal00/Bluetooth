@@ -51,6 +51,14 @@
         android:text="Discoverable"/>
 
     <Button
+        android:id="@+id/ScanButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:minWidth="200dp"
+        android:text="Available Device"/>
+
+    <Button
         android:id="@+id/pairedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,4 +72,10 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:padding="5dp"/>
+
+    <ListView
+        android:id="@+id/availableDevicesListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
